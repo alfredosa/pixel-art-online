@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with Tailwind CSS</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="w-full h-screen bg-black">
+       <div class="m-2 mx-4 flex justify-center items-center bg-gray-200">
+	    <canvas class="border-dashed border-black w-11/12 h-11/12" id="canvas"></canvas>
+	</div>
+	<div>
+	    <!-- TODO: Floating menu - minimal -->
+	</div>
+
+	<div>
+	    <!-- TODO: Google auth / mini icon to authenticate -->
+	</div>
+ <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>	
