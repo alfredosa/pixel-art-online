@@ -1,17 +1,28 @@
 {
   "name": "pao",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
-  "build": "npx tailwindcss -i ./static/src/input.css -o ./static/css/output.css"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+    "dev": "concurrently \"bun run --watch src/app.ts\" \"bun run watch:css\" \"bun run watch:js\"",
+    "watch:css": "tailwindcss -i ./src/static/src/input.css -o ./src/static/css/output.css --watch",
+    "watch:js": "bun build ./src/ts/app.ts --outfile ./src/static/js/app.js --watch",
+    "build:js": "bun build ./src/ts/app.ts --outfile ./src/static/js/app.js",
+    "build:css": "tailwindcss -i ./src/static/src/input.css -o ./src/static/css/output.css --minify",
+    "build": "bun run build:js && bun run build:css"
+  },
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "concurrently": "^9.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }

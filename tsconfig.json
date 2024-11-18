@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",           // Use the latest ECMAScript features
+    "module": "ESNext",           // Use ES modules for both client and server
+    "moduleResolution": "node",   // Necessary for resolving modules in both environments
+    "lib": ["ESNext", "DOM"],     // Includes both DOM for client-side and ESNext for server-side
+    "outDir": "./dist",           // General output directory, could be adjusted in build scripts for different environments
+    "rootDir": "./src",           // Root directory for all source files
+    "strict": true,               // Enable all strict type checking options
+    "esModuleInterop": true,      // For compatibility with CommonJS/ES Modules
+    "skipLibCheck": true,         // Skip type checking of all declaration files
+    "forceConsistentCasingInFileNames": true,  // Case-sensitive file names
+    "sourceMap": true,            // Generate corresponding '.map' files
+    "baseUrl": "./src",           // Set the base URL to resolve non-relative module names
+    "paths": {                    // Define path mappings for imports
+      "@app/*": ["*"],            // Allows importing with @app/alias
+      "@static/*": ["static/*"]   // For static files
+    },
+    "allowJs": true               // Allow JavaScript files to be compiled
+  },
+  "include": [
+    "src/**/*" // Include all TypeScript files in the src directory
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
